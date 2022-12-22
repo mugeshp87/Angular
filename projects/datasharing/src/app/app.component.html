@@ -1,0 +1,5 @@
+<app-Child [item]="CurrentItem"></app-Child>
+<app-chtopar (Event)="addItem($event)"></app-chtopar>
+<ul>
+  <li *ngFor="let item of items">{{item}}</li>
+</ul>
