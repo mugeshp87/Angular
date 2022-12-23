@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
 import { SecondcomponetComponent } from './secondcomponet/secondcomponet.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ImageComponent } from './image/image.component';
 
 @NgModule({
-  declarations: [			
+  declarations: [				
     AppComponent,
       FirstComponent,
       SecondcomponetComponent,
-      PagenotfoundComponent
+      PagenotfoundComponent,
+      ImageComponent
    ],
   imports: [
     BrowserModule,

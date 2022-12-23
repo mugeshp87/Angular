@@ -3,15 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { FirstComponent } from './first/first.component';
 import { SecondcomponetComponent } from './secondcomponet/secondcomponet.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-const routes: Routes = [
-{path:'first component',title:'FIRST',component:FirstComponent},
-{  path:'second component',title:'SECOND',component:SecondcomponetComponent}
-  ,{ path: '',   redirectTo: '/SecondcomponetComponent', pathMatch: 'full' }
-  ,{path:'**',component:PagenotfoundComponent}
-];
+import { ImageComponent } from './image/image.component';
+const routes: Routes = []
+;
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot([{path:'first component',title:'FIRST',component:FirstComponent},
+    {path:'second component',title:'SECOND',component:SecondcomponetComponent},
+    {path:'image',component:ImageComponent},
+    { path: '',   redirectTo: '/second component',pathMatch:'full' },
+    {path:'**',component:PagenotfoundComponent}])],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
