@@ -6,14 +6,16 @@ import { FirstComponent } from './first/first.component';
 import { SecondcomponetComponent } from './secondcomponet/secondcomponet.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ImageComponent } from './image/image.component';
+import { ThirdComponent } from './third/third.component';
 
 @NgModule({
-  declarations: [				
+  declarations: [					
     AppComponent,
       FirstComponent,
       SecondcomponetComponent,
       PagenotfoundComponent,
-      ImageComponent
+      ImageComponent,
+      ThirdComponent
    ],
   imports: [
     BrowserModule,
