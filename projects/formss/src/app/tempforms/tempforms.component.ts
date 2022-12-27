@@ -13,16 +13,5 @@ export class TempformsComponent implements OnInit {
 
   ngOnInit() {
   }
-  @ViewChild('cform')
-  course!: NgForm;
-  onSubmit(form: NgForm) {
-    console.log("Course Name is : " + form.value.courseName);
-    console.log("Course Desc is : " + form.value.courseDesc);
-    console.log("Course Amount is : " + form.value.courseAmount);    
-    }
-  
-onClear()
-{
-  this.course.reset()
-}
+  topics=['angular','react','vue']
 }

@@ -1,30 +1,70 @@
-<div class="row">
-  <div class="col-xs-12">S
-    <form style="text-align: center;padding-top: 200px"; #cform="ngForm" (ngSubmit)="onSubmit(cform)">
-      <div class="row">
-        <div class="col-sm-5 form-group">
-          <label for="courseName">Course Name</label>
-          <input type="text" id="courseName" class="form-control" ngModel/>
-        <pre></pre>
-        </div>
-        <div class="col-sm-2 form-group">
-          <label for="courseDesc">Course Description</label>
-          <input type="text" id="courseDesc" class="form-control" ngModel/>
-        <pre></pre>
-        </div>
-        <div class="col-sm-2 form-group">
-          <label for="courseAmount">Course Amount</label>
-          <input type="number" id="courseAmount" class="form-control" ngModel/>
-          <pre></pre>
-        </div>
-      </div>
-      <div class="row" >
-        <div class="col-xs-12" >
-          <button style="margin: 10px;" class="btn btn-success" type="submit">Add</button>
-          <button style="margin: 10px;" class="btn btn-danger" type="button">Delete</button>
-          <button style="margin: 10px;" class="btn btn-primary" type="button">Clear</button>
-        </div>
-      </div>
-    </form>
-  </div>
+<div class="container-fluid">
+  <h1>Enrollment Form</h1>
+  <form #userForm="ngForm" >
+   
+
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" name="username" class="form-control" ngModel>
+    </div>
+
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="tel" class="form-control" name="mobile" ngModel>
+    </div><br>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control"name="mail" ngModel>
+    </div><br>
+<div ngModelGroup="address">
+    <div class="form-group">
+      <label>Street</label>
+      <input type="text" name="username" class="form-control" ngModel>
+    </div>
+
+    <div class="form-group">
+      <label>City</label>
+      <input type="text" class="form-control" name="cityname" ngModel>
+    </div><br>
+
+    <div class="form-group">
+      <label>State</label>
+      <input type="text" class="form-control" name="State" ngModel>
+    </div>
+    <div class="form-group">
+      <label>PostalCode</label>
+      <input type="text" class="form-control" name="pincode" ngModel>
+    </div>
+    <br>
 </div>
+<div class="form-group">
+  <select class="custom-select" name="courses" ngModel>
+    <option select>I am interested in</option>
+    <option *ngFor="let topic of topics">{{topic}}</option>
+  </select>
+</div>
+<br>
+<div>
+<label for="timepreference">Time Preference</label> 
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="timepreference"  value="Morning" ngModel>
+  <label class="form-check-label" for="inlineRadio1">Morning(9am-12pm)</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="timepreference" id="inlineRadio2" value="Evening">
+  <label class="form-check-label" for="inlineRadio2">Evening(2pm-5pm)</label>
+</div>
+</div>
+<div class="form-check"><br>
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="subscribe" ngModel>
+  <label class="form-check-label" for="defaultCheck1">
+    Send me promotional offers
+  </label>
+</div>
+
+<br>
+<button class="btn btn-primary">Submit</button>
+  </form>
+  <br>
+  {{userForm.value|json}}

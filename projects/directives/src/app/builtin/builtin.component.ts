@@ -14,4 +14,6 @@ export class BuiltinComponent implements OnInit {
   isclass=true;
   value=true;
   condition=false;
+  items=['mobile','laptop','tablet'];
+  mnc="aspire";
 }
