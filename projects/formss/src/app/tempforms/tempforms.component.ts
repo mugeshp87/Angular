@@ -1,6 +1,7 @@
 import { NgFor } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { User } from '../user';
 
 @Component({
   selector: 'app-tempforms',
@@ -14,4 +15,5 @@ export class TempformsComponent implements OnInit {
   ngOnInit() {
   }
   topics=['angular','react','vue']
+  UserModule=new User('mugesh',88778,'muges@gmail.com','muthu','vdm','tn',614809,'angular','orning',true);
 }

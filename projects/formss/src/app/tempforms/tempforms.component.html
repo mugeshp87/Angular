@@ -5,41 +5,55 @@
 
     <div class="form-group">
       <label>Name</label>
-      <input type="text" name="username" class="form-control" ngModel>
-    </div>
+      <input type="text" #name="ngModel" required name="username" [class.is-invalid]="name.invalid && name.touched" class="form-control" [(ngModel)]="UserModule.username" >
+    <!-- <small class="text danger" [class.d-none]="name.valid||name.untouched">Name is required</small>
+     -->
+<!-- <div *ngIf="name.errors && (name.invalid || name.touched)">
+<small class="text-danger" *ngIf="name.errors.required">Phone number is req
+<small class="text-danger" *ngIf="name.errors.pattern">Phone number must be
+</div> -->
+     
+     </div>
+    
+{{name.pristine}}
+{{name.valid}}
+
 
     <div class="form-group">
       <label>Phone</label>
-      <input type="tel" class="form-control" name="mobile" ngModel>
+      <input type="tel"  #Mobile="ngModel" [class.is-invalid]="Mobile.invalid && Mobile.touched" pattern="^\d{10}$" class="form-control" name="mobile" [(ngModel)]="UserModule.mobile">
     </div><br>
 
     <div class="form-group">
       <label>Email</label>
-      <input type="email" class="form-control"name="mail" ngModel>
+      <input type="email" class="form-control"name="mail" [(ngModel)]="UserModule.mail">
     </div><br>
-<div ngModelGroup="address">
-    <div class="form-group">
+
+    <div ngModelGroup="address">
+  <div class="form-group">
       <label>Street</label>
-      <input type="text" name="username" class="form-control" ngModel>
+      <input type="text" name="street" class="form-control" [(ngModel)]="UserModule.street">
     </div>
 
     <div class="form-group">
       <label>City</label>
-      <input type="text" class="form-control" name="cityname" ngModel>
+      <input type="text" class="form-control" name="cityname" [(ngModel)]="UserModule.cityname">
     </div><br>
 
     <div class="form-group">
       <label>State</label>
-      <input type="text" class="form-control" name="State" ngModel>
+      <input type="text" class="form-control" name="State" [(ngModel)]="UserModule.state">
     </div>
+
     <div class="form-group">
       <label>PostalCode</label>
-      <input type="text" class="form-control" name="pincode" ngModel>
+      <input type="text" class="form-control" name="pincode" [(ngModel)]="UserModule.pincode">
     </div>
     <br>
 </div>
+
 <div class="form-group">
-  <select class="custom-select" name="courses" ngModel>
+  <select class="custom-select" name="courses" [(ngModel)]="UserModule.course">
     <option select>I am interested in</option>
     <option *ngFor="let topic of topics">{{topic}}</option>
   </select>
@@ -48,16 +62,16 @@
 <div>
 <label for="timepreference">Time Preference</label> 
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="timepreference"  value="Morning" ngModel>
+  <input class="form-check-input" type="radio" name="timepreference"  value="Morning" [(ngModel)]="UserModule.timepreference">
   <label class="form-check-label" for="inlineRadio1">Morning(9am-12pm)</label>
 </div>
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="timepreference" id="inlineRadio2" value="Evening">
+  <input class="form-check-input" type="radio" name="timepreference" id="inlineRadio2" value="Evening" [(ngModel)]="UserModule.timepreference">
   <label class="form-check-label" for="inlineRadio2">Evening(2pm-5pm)</label>
 </div>
 </div>
 <div class="form-check"><br>
-  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="subscribe" ngModel>
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="subscribe" [(ngModel)]="UserModule.subscribe">
   <label class="form-check-label" for="defaultCheck1">
     Send me promotional offers
   </label>
@@ -67,4 +81,6 @@
 <button class="btn btn-primary">Submit</button>
   </form>
   <br>
+  {{UserModule|json}}
+  <hr>
   {{userForm.value|json}}
