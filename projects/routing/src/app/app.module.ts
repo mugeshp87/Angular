@@ -7,6 +7,7 @@ import { SecondcomponetComponent } from './secondcomponet/secondcomponet.compone
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ImageComponent } from './image/image.component';
 import { ThirdComponent } from './third/third.component';
+import { TestCanActivate } from './gaurds';
 
 @NgModule({
   declarations: [					
@@ -21,7 +22,7 @@ import { ThirdComponent } from './third/third.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [TestCanActivate],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
