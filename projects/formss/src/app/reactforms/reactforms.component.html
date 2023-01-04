@@ -1,8 +1,33 @@
-<p>
-  reactforms works!
-</p>
-<form>
+<form [formGroup]="loginForm">
+  <div id="username">
+    <label>Enter your username: </label>
 
-  <label></label>
-   
+    <input
+      formControlName="name"
+      type="text"
+      id="userNameLogin"
+      required="required"
+      placeholder="Enter your username"
+    />
+
+    <div
+      *ngIf="!loginForm.get('name')?.valid && loginForm.get('name')?.touched"
+    >
+      Enter atleast only 8characters for name:
+    </div>
+  </div>
+
+  <div id="password">
+    <label>Enter your password: </label>
+
+    <input
+      formControlName="password"
+      type="password"
+      id="passwordLogin"
+      required="required"
+      placeholder="Enter your Password"
+    />
+  </div>
+
+  <button type="submit">SUBMIT</button>
 </form>

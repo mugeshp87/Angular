@@ -1,0 +1,18 @@
+<p>
+  Angular Post!
+</p>
+<form #Userform="ngForm" (submit)="addusers(Userform)">
+<label>Username</label>
+  <input type="text" name="name" [(ngModel)]="name" > 
+ <pre></pre> 
+ <label>Age in no</label>
+  <input type="number" [(ngModel)]="age" name="age">
+  <pre></pre>
+  <label>Feedback</label>
+   <textarea name="feedback" [(ngModel)]="feed"></textarea>
+  <pre></pre>
+   <input type="submit" >
+  </form>
+  {{name}}
+  {{age}}
+  {{feed}}

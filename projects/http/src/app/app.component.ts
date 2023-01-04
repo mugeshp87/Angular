@@ -13,7 +13,10 @@ export class AppComponent {
   constructor(private custservice:HttpService){
 
     this.custservice.getcustomers().subscribe(data=>{
-      this.customers=data; })
+      console.log(data)
+      this.customers=data},(error)=>{
+        console.log("Error Occurs",+error)
+      })
     }
   }
   
